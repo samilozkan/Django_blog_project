@@ -1,0 +1,19 @@
+
+
+{% extends 'base.html' %}
+
+{% block body %}
+
+    {# /post{{ post.id }} --şimdilik burada dursun#}
+
+    {% for post in posts %}
+        {{ post.id }}<br>
+        <!--  burada <<a></a>> ekledik -->
+        <!-- hedef yolu olarak da detay sayfasının adresini vereceğiz -->
+        <a href="{% url 'detail' id=post.id %}">{{ post.title }}</a><br>
+        {{ post.content }}<br>
+        {{ post.publishing_date }}<br>
+
+    {% endfor %}
+
+{% endblock %}
